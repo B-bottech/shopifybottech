@@ -1,7 +1,8 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>.B-bottech Portfolio</title>
   <style>
     * {
@@ -10,11 +11,13 @@
       box-sizing: border-box;
       font-family: Arial, sans-serif;
     }
+
     body {
       background: linear-gradient(to right, #f4f4f4, #cbe6cdec);
       color: #111;
       line-height: 1.6;
     }
+
     header {
       background: #fff;
       padding: 20px;
@@ -26,6 +29,7 @@
       top: 0;
       z-index: 1000;
     }
+
     .logo {
       font-size: 36px;
       font-weight: 900;
@@ -34,10 +38,12 @@
       font-family: 'Georgia', serif;
       letter-spacing: 1px;
     }
+
     .logo span {
       color: #95BF47;
-      font-family: 'Brush  MT', ;
+      font-family: 'Brush Script MT', cursive;
     }
+
     nav ul {
       list-style: none;
       display: flex;
@@ -45,6 +51,7 @@
       justify-content: center;
       gap: 20px;
     }
+
     nav ul li a {
       text-decoration: none;
       color: #333;
@@ -54,16 +61,31 @@
       background: #e9e9e9;
       transition: background 0.3s;
     }
+
     nav ul li a:hover {
       background: #95BF47;
       color: #fff;
     }
+
     section {
       padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
       text-align: center;
+      opacity: 0;
+      transform: translateX(100px);
+      transition: all 0.6s ease-out;
     }
+
+    .slide-left {
+      transform: translateX(-100px);
+    }
+
+    .show-section {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
     .highlight {
       background: #fff;
       padding: 30px;
@@ -71,29 +93,35 @@
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
+
     .title {
       font-size: 32px;
       color: #111;
       margin-bottom: 20px;
     }
+
     .skills-bar {
       text-align: left;
       margin: 10px 0;
     }
+
     .skills-bar .label {
       font-weight: bold;
       margin-bottom: 5px;
     }
+
     .skills-bar .bar {
       width: 100%;
       background: #ccc;
       border-radius: 10px;
     }
+
     .skills-bar .bar-fill {
       height: 20px;
       background: #000;
       border-radius: 10px;
     }
+
     .card {
       background: #fff;
       padding: 20px;
@@ -105,6 +133,7 @@
       height: 200px;
       vertical-align: top;
     }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -112,6 +141,7 @@
       font-size: 14px;
       color: #333;
     }
+
     .email-btn {
       background: #111;
       padding: 10px 20px;
@@ -137,10 +167,14 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-  </header>  <section id="about">
-    <h2 class="title"><span style="color:#222;font-weight:bold;">Professional</span> <span style="color:#196611;font-weight:bold;">Shopify & Graphic Designer</span>  <span style="color:#333;font-weight:bold;"></span></h2>
+  </header>
+
+  <section id="about">
+    <h2 class="title"><span style="color:#222;font-weight:bold;">Professional</span> <span style="color:#196611;font-weight:bold;">Shopify & Graphic Designer</span></h2>
     <p>I create and build user-friendly Shopify stores, professional graphics and visual identities using CorelDraw, Photoshop, and other tools.</p>
-  </section>  <section id="skills" class="highlight">
+  </section>
+
+  <section id="skills" class="highlight">
     <h2 class="title">My Skills</h2>
     <div class="skills-bar">
       <div class="label">CorelDraw - 98%</div>
@@ -154,33 +188,66 @@
       <div class="label">JavaScript - 85%</div>
       <div class="bar"><div class="bar-fill" style="width:85%"></div></div>
     </div>
-  </section>  <section id="portfolio">
+  </section>
+
+  <section id="portfolio">
     <h2 class="title">Portfolio Samples</h2>
     <div class="card">E-commerce Website Design</div>
     <div class="card">Logo & Visual Identity</div>
     <div class="card">Landing Page Development</div>
-  </section>  <section id="pricing" class="highlight">
+  </section>
+
+  <section id="pricing" class="highlight">
     <h2 class="title">Pricing</h2>
     <div class="card">Basic <br>-<br> <span class="logo"> $100 </span></div>
     <div class="card">Standard<br>-<br> <span class="logo">$250</span></div>
     <div class="card">Premium<br>-<br> <span class="logo">$500</span></div>
-  </section>  <section id="clients">
+  </section>
+
+  <section id="clients">
     <h2 class="title">People I've Worked With</h2>
-    <div class="card"> <br> <span class="logo">Aliyu M.</span><br> -<br> “Excellent work on our Shopify platform.”</div>
-    <div class="card"><br> <span class="logo">Sarah J. </span><br> -<br> “Branding and design were top-notch.”</div>
-  </section>  <section id="websites">
+    <div class="card"><br> <span class="logo">Aliyu M.</span><br> -<br> “Excellent work on our Shopify platform.”</div>
+    <div class="card"><br> <span class="logo">Sarah J.</span><br> -<br> “Branding and design were top-notch.”</div>
+  </section>
+
+  <section id="websites">
     <h2 class="title">Websites I've Built</h2>
     <div class="card">myonlinestore.com</div>
     <div class="card">graphicvisionpro.net</div>
-  </section>  <section id="contact" class="highlight">
+  </section>
+
+  <section id="contact" class="highlight">
     <h2 class="title">Let's Work Together</h2>
     <p>Email me: bbottech40@gmail.com</p>
     <a href="mailto:bbottech40@gmail.com" class="email-btn">Send Email</a>
-  </section>  <footer>
+  </section>
+
+  <footer>
     &copy; <span id="year"></span> .B-bottech. All rights reserved.
   </footer>
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const sections = document.querySelectorAll("section");
+
+    function handleScroll() {
+      const trigger = window.innerHeight * 0.85;
+      sections.forEach((section, i) => {
+        const top = section.getBoundingClientRect().top;
+        if (top < trigger) {
+          section.classList.add('show-section');
+          if (i % 2 === 0) {
+            section.classList.add('slide-left');
+          } else {
+            section.classList.remove('slide-left');
+          }
+        }
+      });
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("load", handleScroll);
   </script>
 </body>
 </html>
