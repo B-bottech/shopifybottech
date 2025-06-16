@@ -5,142 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>.B-bottech Portfolio</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-    body {
-      background: linear-gradient(to right, #f4f4f4, #cbe6cdec);
-      color: #111;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    header {
-      background: #fff;
-      padding: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .header-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-    .logo {
-      font-size: 36px;
-      font-weight: 900;
-      color: #000;
-      font-family: 'Georgia', serif;
-      letter-spacing: 1px;
-      margin-right: 20px;
-    }
-    .logo span {
-      color: #95BF47;
-      font-family: 'Brush MT', cursive;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      padding: 8px 12px;
-      border-radius: 6px;
-      background: #e9e9e9;
-      transition: background 0.3s;
-    }
-    nav ul li a:hover {
-      background: #95BF47;
-      color: #fff;
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-    .highlight {
-      background: #fff;
-      padding: 30px;
-      margin-top: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    }
-    .title {
-      font-size: 32px;
-      color: #111;
-      margin-bottom: 20px;
-    }
-    .skills-bar {
-      text-align: left;
-      margin: 10px 0;
-    }
-    .skills-bar .label {
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    .skills-bar .bar {
-      width: 100%;
-      background: #ccc;
-      border-radius: 10px;
-    }
-    .skills-bar .bar-fill {
-      height: 20px;
-      background: #000;
-      border-radius: 10px;
-    }
-    .card {
-      background: #fff;
-      padding: 20px;
-      margin: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      display: inline-block;
-      width: 250px;
-      height: 200px;
-      vertical-align: top;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #fff;
-      font-size: 14px;
-      color: #333;
-    }
-    .email-btn {
-      background: #111;
-      padding: 10px 20px;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 20px;
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+    body{
+      background:linear-gradient(to right,#f4f4f4,#cbe6cdec);
+      color:#111;line-height:1.6;overflow-x:hidden;
     }
 
-    @media (max-width: 768px) {
-      .header-container {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav ul {
-        justify-content: flex-start;
-      }
+    header{background:#fff;padding:20px;box-shadow:0 2px 5px rgba(0,0,0,.1);
+      position:sticky;top:0;z-index:1000;}
+    .header-container{max-width:1100px;margin:auto;
+      display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+    .logo{font-size:36px;font-weight:900;color:#000;font-family:'Georgia',serif;letter-spacing:1px;margin-right:20px;}
+    .logo span{color:#95BF47;font-family:'Brush MT',cursive;}
+    nav ul{list-style:none;display:flex;gap:12px;flex-wrap:wrap;}
+    nav ul li a{display:block;text-decoration:none;color:#333;font-weight:bold;
+      padding:8px 12px;border-radius:6px;background:#e9e9e9;transition:.3s;}
+    nav ul li a:hover{background:#95BF47;color:#fff;}
+
+    section{padding:60px 20px;max-width:1000px;margin:auto;text-align:center;}
+    .highlight{background:#fff;padding:30px;margin-top:30px;border-radius:10px;box-shadow:0 4px 8px rgba(0,0,0,.05);}
+    .title{font-size:32px;margin-bottom:20px;color:#111;}
+
+    .skills-bar{margin:10px 0;text-align:left;}
+    .skills-bar .label{font-weight:bold;margin-bottom:5px;}
+    .skills-bar .bar{width:100%;background:#ccc;border-radius:10px;}
+    .skills-bar .bar-fill{height:20px;background:#000;border-radius:10px;}
+
+    .card{background:#fff;padding:20px;margin:20px;border-radius:10px;
+      box-shadow:0 2px 10px rgba(0,0,0,.1);display:inline-block;width:250px;height:200px;vertical-align:top;}
+
+    footer{text-align:center;padding:20px;background:#fff;font-size:14px;color:#333;}
+
+    .email-btn{display:inline-block;margin-top:20px;background:#111;color:#fff;
+      padding:10px 20px;border-radius:5px;text-decoration:none;}
+
+    #chatbot-button{
+      position:fixed;bottom:20px;right:20px;z-index:1200;
+      background:#196611;color:#fff;font-weight:bold;padding:12px 18px;
+      border-radius:30px;cursor:pointer;box-shadow:0 4px 8px rgba(0,0,0,.2);
+    }
+    #chat-box{
+      position:fixed;bottom:80px;right:20px;z-index:1200;
+      width:320px;height:450px;display:none;background:#fff;border-radius:10px;
+      box-shadow:0 8px 16px rgba(0,0,0,.25);overflow:hidden;
+    }
+    @media(max-width:768px){
+      .header-container{flex-direction:column;align-items:flex-start;}
+      nav ul{justify-content:flex-start;}
     }
   </style>
 </head>
 <body>
+
   <header>
     <div class="header-container">
       <div class="logo">.B-<span>BOTTECH</span></div>
@@ -158,22 +74,23 @@
   </header>
 
   <section id="about">
-    <h2 class="title"><span style="color:#222;font-weight:bold;">Professional</span> <span style="color:#196611;font-weight:bold;">Shopify & Graphic Designer</span></h2>
-    <p>I create and build user-friendly Shopify stores, professional graphics and visual identities using CorelDraw, Photoshop, and other tools.</p>
+    <h2 class="title"><span style="color:#222;font-weight:bold;">Professional</span>
+        <span style="color:#196611;font-weight:bold;">Shopify & Graphic Designer</span></h2>
+    <p>I create user-friendly Shopify stores, professional graphics, and visual identities using CorelDraw, Photoshop, and more.</p>
   </section>
 
   <section id="skills" class="highlight">
     <h2 class="title">My Skills</h2>
     <div class="skills-bar">
-      <div class="label">CorelDraw - 98%</div>
+      <div class="label">CorelDraw – 98%</div>
       <div class="bar"><div class="bar-fill" style="width:98%"></div></div>
     </div>
     <div class="skills-bar">
-      <div class="label">Adobe Photoshop - 80%</div>
+      <div class="label">Adobe Photoshop – 80%</div>
       <div class="bar"><div class="bar-fill" style="width:80%"></div></div>
     </div>
     <div class="skills-bar">
-      <div class="label">JavaScript - 85%</div>
+      <div class="label">JavaScript – 85%</div>
       <div class="bar"><div class="bar-fill" style="width:85%"></div></div>
     </div>
   </section>
@@ -187,25 +104,25 @@
 
   <section id="pricing" class="highlight">
     <h2 class="title">Pricing</h2>
-    <div class="card">Basic <br>-<br> <span class="logo"> $100 </span></div>
-    <div class="card">Standard<br>-<br> <span class="logo">$250</span></div>
-    <div class="card">Premium<br>-<br> <span class="logo">$500</span></div>
+    <div class="card">Basic<br><br><strong>$100</strong></div>
+    <div class="card">Standard<br><br><strong>$250</strong></div>
+    <div class="card">Premium<br><br><strong>$500</strong></div>
   </section>
 
   <section id="clients">
-    <h2 class="title">People I've Worked With</h2>
-    <div class="card"> <br> <span class="logo">Aliyu M.</span><br> -<br> “Excellent work on our Shopify platform.”</div>
-    <div class="card"><br> <span class="logo">Sarah J. </span><br> -<br> “Branding and design were top-notch.”</div>
+    <h2 class="title">People I’ve Worked With</h2>
+    <div class="card"><strong>Aliyu M.</strong><br>“Excellent work on our Shopify platform.”</div>
+    <div class="card"><strong>Sarah J.</strong><br>“Branding and design were top-notch.”</div>
   </section>
 
-  <section id="websites">
-    <h2 class="title">Websites I've Built</h2>
+  <section id="websites" class="highlight">
+    <h2 class="title">Websites I’ve Built</h2>
     <div class="card">myonlinestore.com</div>
     <div class="card">graphicvisionpro.net</div>
   </section>
 
-  <section id="contact" class="highlight">
-    <h2 class="title">Let's Work Together</h2>
+  <section id="contact">
+    <h2 class="title">Let’s Work Together</h2>
     <p>Email me: bbottech40@gmail.com</p>
     <a href="mailto:bbottech40@gmail.com" class="email-btn">Send Email</a>
   </section>
@@ -214,8 +131,45 @@
     &copy; <span id="year"></span> .B-bottech. All rights reserved.
   </footer>
 
+  <!-- You can keep this button if you want, but it's not needed with the floating widget -->
+  <!-- <div id="chatbot-button" onclick="toggleChat()">💬 Chat</div> -->
+  <!-- <div id="chat-box">...</div> -->
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
+  <!-- ✅ Chatbase Floating AI Widget -->
+  <script>
+    (function(){
+      if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+        window.chatbase = (...arguments) => {
+          if (!window.chatbase.q) { window.chatbase.q = [] }
+          window.chatbase.q.push(arguments)
+        };
+        window.chatbase = new Proxy(window.chatbase, {
+          get(target, prop) {
+            if (prop === "q") return target.q;
+            return (...args) => target(prop, ...args);
+          }
+        });
+      }
+
+      const onLoad = function() {
+        const script = document.createElement("script");
+        script.src = "https://www.chatbase.co/embed.min.js";
+        script.id = "7GMjVTUQBmrbZ0Kdaaozd";
+        script.domain = "www.chatbase.co";
+        document.body.appendChild(script);
+      };
+
+      if (document.readyState === "complete") {
+        onLoad();
+      } else {
+        window.addEventListener("load", onLoad);
+      }
+    })();
+  </script>
+
 </body>
 </html>
