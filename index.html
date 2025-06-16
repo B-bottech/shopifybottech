@@ -5,53 +5,192 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>.B-bottech Portfolio</title>
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
-    body{
-      background:linear-gradient(to right,#f4f4f4,#cbe6cdec);
-      color:#111;line-height:1.6;overflow-x:hidden;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
-    header{background:#fff;padding:20px;box-shadow:0 2px 5px rgba(0,0,0,.1);
-      position:sticky;top:0;z-index:1000;}
-    .header-container{max-width:1100px;margin:auto;
-      display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;}
-    .logo{font-size:36px;font-weight:900;color:#000;font-family:'Georgia',serif;letter-spacing:1px;margin-right:20px;}
-    .logo span{color:#95BF47;font-family:'Brush MT',cursive;}
-    nav ul{list-style:none;display:flex;gap:12px;flex-wrap:wrap;}
-    nav ul li a{display:block;text-decoration:none;color:#333;font-weight:bold;
-      padding:8px 12px;border-radius:6px;background:#e9e9e9;transition:.3s;}
-    nav ul li a:hover{background:#95BF47;color:#fff;}
-
-    section{padding:60px 20px;max-width:1000px;margin:auto;text-align:center;}
-    .highlight{background:#fff;padding:30px;margin-top:30px;border-radius:10px;box-shadow:0 4px 8px rgba(0,0,0,.05);}
-    .title{font-size:32px;margin-bottom:20px;color:#111;}
-
-    .skills-bar{margin:10px 0;text-align:left;}
-    .skills-bar .label{font-weight:bold;margin-bottom:5px;}
-    .skills-bar .bar{width:100%;background:#ccc;border-radius:10px;}
-    .skills-bar .bar-fill{height:20px;background:#000;border-radius:10px;}
-
-    .card{background:#fff;padding:20px;margin:20px;border-radius:10px;
-      box-shadow:0 2px 10px rgba(0,0,0,.1);display:inline-block;width:250px;height:200px;vertical-align:top;}
-
-    footer{text-align:center;padding:20px;background:#fff;font-size:14px;color:#333;}
-
-    .email-btn{display:inline-block;margin-top:20px;background:#111;color:#fff;
-      padding:10px 20px;border-radius:5px;text-decoration:none;}
-
-    #chatbot-button{
-      position:fixed;bottom:20px;right:20px;z-index:1200;
-      background:#196611;color:#fff;font-weight:bold;padding:12px 18px;
-      border-radius:30px;cursor:pointer;box-shadow:0 4px 8px rgba(0,0,0,.2);
+    html, body {
+      overflow-x: hidden;
+      background: linear-gradient(to right, #f4f4f4, #cbe6cdec);
+      color: #111;
+      line-height: 1.6;
     }
-    #chat-box{
-      position:fixed;bottom:80px;right:20px;z-index:1200;
-      width:320px;height:450px;display:none;background:#fff;border-radius:10px;
-      box-shadow:0 8px 16px rgba(0,0,0,.25);overflow:hidden;
+
+    header {
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
+
+    .header-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 36px;
+      font-weight: 900;
+      color: #000;
+      font-family: 'Georgia', serif;
+      letter-spacing: 1px;
+      margin-right: 20px;
+    }
+
+    .logo span {
+      color: #95BF47;
+      font-family: 'Brush MT', cursive;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      display: block;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 6px;
+      background: #e9e9e9;
+      transition: .3s;
+    }
+
+    nav ul li a:hover {
+      background: #95BF47;
+      color: #fff;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+      opacity: 0;
+      transform: translateX(100px);
+      transition: all 0.8s ease-out;
+    }
+
+    section.slide-in-left {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    section.slide-in-right {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .highlight {
+      background: #fff;
+      padding: 30px;
+      margin-top: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,.05);
+    }
+
+    .title {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #111;
+    }
+
+    .skills-bar {
+      margin: 10px 0;
+      text-align: left;
+    }
+
+    .skills-bar .label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .skills-bar .bar {
+      width: 100%;
+      background: #ccc;
+      border-radius: 10px;
+    }
+
+    .skills-bar .bar-fill {
+      height: 20px;
+      background: #000;
+      border-radius: 10px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.1);
+      display: inline-block;
+      width: 250px;
+      height: 200px;
+      vertical-align: top;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #fff;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .email-btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: #111;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    #chatbot-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      background: #000;
+      color: #fff;
+      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,.3);
+    }
+
+    iframe#chatbase-chat-frame {
+      position: fixed !important;
+      bottom: 80px !important;
+      right: 20px !important;
+      max-width: 380px !important;
+      z-index: 9999 !important;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+
     @media(max-width:768px){
-      .header-container{flex-direction:column;align-items:flex-start;}
-      nav ul{justify-content:flex-start;}
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav ul {
+        justify-content: flex-start;
+      }
     }
   </style>
 </head>
@@ -131,44 +270,53 @@
     &copy; <span id="year"></span> .B-bottech. All rights reserved.
   </footer>
 
-  <!-- You can keep this button if you want, but it's not needed with the floating widget -->
-  <!-- <div id="chatbot-button" onclick="toggleChat()">💬 Chat</div> -->
-  <!-- <div id="chat-box">...</div> -->
+  <!-- CHATBOT BUTTON -->
+  <div id="chatbot-button" onclick="window.chatbase?.('toggle')">💬 Chat</div>
 
+  <!-- CHATBASE SCRIPT -->
+  <script>
+  (function(){
+    if(!window.chatbase || window.chatbase("getState")!=="initialized"){
+      window.chatbase=(...args)=>{
+        if(!window.chatbase.q){window.chatbase.q=[]}
+        window.chatbase.q.push(args)
+      };
+      window.chatbase=new Proxy(window.chatbase,{
+        get(target,prop){
+          if(prop==="q"){return target.q}
+          return(...args)=>target(prop,...args)
+        }
+      });
+    }
+    const onLoad=function(){
+      const script=document.createElement("script");
+      script.src="https://www.chatbase.co/embed.min.js";
+      script.id="7GMjVTUQBmrbZ0Kdaaozd";
+      script.domain="www.chatbase.co";
+      document.body.appendChild(script);
+    };
+    if(document.readyState==="complete"){onLoad();}
+    else{window.addEventListener("load",onLoad);}
+  })();
+  </script>
+
+  <!-- YEAR SCRIPT -->
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
-  <!-- ✅ Chatbase Floating AI Widget -->
+  <!-- SLIDE ON SCROLL SCRIPT -->
   <script>
-    (function(){
-      if (!window.chatbase || window.chatbase("getState") !== "initialized") {
-        window.chatbase = (...arguments) => {
-          if (!window.chatbase.q) { window.chatbase.q = [] }
-          window.chatbase.q.push(arguments)
-        };
-        window.chatbase = new Proxy(window.chatbase, {
-          get(target, prop) {
-            if (prop === "q") return target.q;
-            return (...args) => target(prop, ...args);
-          }
-        });
-      }
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(entry.target.id.length % 2 === 0 ? "slide-in-left" : "slide-in-right");
+        }
+      });
+    }, { threshold: 0.3 });
 
-      const onLoad = function() {
-        const script = document.createElement("script");
-        script.src = "https://www.chatbase.co/embed.min.js";
-        script.id = "7GMjVTUQBmrbZ0Kdaaozd";
-        script.domain = "www.chatbase.co";
-        document.body.appendChild(script);
-      };
-
-      if (document.readyState === "complete") {
-        onLoad();
-      } else {
-        window.addEventListener("load", onLoad);
-      }
-    })();
+    sections.forEach(section => observer.observe(section));
   </script>
 
 </body>
