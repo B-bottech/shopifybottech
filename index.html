@@ -11,47 +11,46 @@
       box-sizing: border-box;
       font-family: Arial, sans-serif;
     }
-
     body {
       background: linear-gradient(to right, #f4f4f4, #cbe6cdec);
       color: #111;
       line-height: 1.6;
+      overflow-x: hidden;
     }
-
     header {
       background: #fff;
       padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
-
+    .header-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
     .logo {
       font-size: 36px;
       font-weight: 900;
       color: #000;
-      margin-bottom: 10px;
       font-family: 'Georgia', serif;
       letter-spacing: 1px;
+      margin-right: 20px;
     }
-
     .logo span {
       color: #95BF47;
-      font-family: 'Brush Script MT', cursive;
+      font-family: 'Brush MT', cursive;
     }
-
     nav ul {
       list-style: none;
       display: flex;
+      gap: 12px;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
     }
-
     nav ul li a {
       text-decoration: none;
       color: #333;
@@ -61,31 +60,16 @@
       background: #e9e9e9;
       transition: background 0.3s;
     }
-
     nav ul li a:hover {
       background: #95BF47;
       color: #fff;
     }
-
     section {
       padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
       text-align: center;
-      opacity: 0;
-      transform: translateX(100px);
-      transition: all 0.6s ease-out;
     }
-
-    .slide-left {
-      transform: translateX(-100px);
-    }
-
-    .show-section {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
     .highlight {
       background: #fff;
       padding: 30px;
@@ -93,35 +77,29 @@
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
-
     .title {
       font-size: 32px;
       color: #111;
       margin-bottom: 20px;
     }
-
     .skills-bar {
       text-align: left;
       margin: 10px 0;
     }
-
     .skills-bar .label {
       font-weight: bold;
       margin-bottom: 5px;
     }
-
     .skills-bar .bar {
       width: 100%;
       background: #ccc;
       border-radius: 10px;
     }
-
     .skills-bar .bar-fill {
       height: 20px;
       background: #000;
       border-radius: 10px;
     }
-
     .card {
       background: #fff;
       padding: 20px;
@@ -133,7 +111,6 @@
       height: 200px;
       vertical-align: top;
     }
-
     footer {
       text-align: center;
       padding: 20px;
@@ -141,7 +118,6 @@
       font-size: 14px;
       color: #333;
     }
-
     .email-btn {
       background: #111;
       padding: 10px 20px;
@@ -152,21 +128,33 @@
       display: inline-block;
       margin-top: 20px;
     }
+
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav ul {
+        justify-content: flex-start;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">.B-<span>BOTTECH</span></div>
-    <nav>
-      <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#clients">Clients</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="header-container">
+      <div class="logo">.B-<span>BOTTECH</span></div>
+      <nav>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#clients">Clients</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <section id="about">
@@ -206,8 +194,8 @@
 
   <section id="clients">
     <h2 class="title">People I've Worked With</h2>
-    <div class="card"><br> <span class="logo">Aliyu M.</span><br> -<br> “Excellent work on our Shopify platform.”</div>
-    <div class="card"><br> <span class="logo">Sarah J.</span><br> -<br> “Branding and design were top-notch.”</div>
+    <div class="card"> <br> <span class="logo">Aliyu M.</span><br> -<br> “Excellent work on our Shopify platform.”</div>
+    <div class="card"><br> <span class="logo">Sarah J. </span><br> -<br> “Branding and design were top-notch.”</div>
   </section>
 
   <section id="websites">
@@ -228,26 +216,6 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    const sections = document.querySelectorAll("section");
-
-    function handleScroll() {
-      const trigger = window.innerHeight * 0.85;
-      sections.forEach((section, i) => {
-        const top = section.getBoundingClientRect().top;
-        if (top < trigger) {
-          section.classList.add('show-section');
-          if (i % 2 === 0) {
-            section.classList.add('slide-left');
-          } else {
-            section.classList.remove('slide-left');
-          }
-        }
-      });
-    }
-
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("load", handleScroll);
   </script>
 </body>
 </html>
